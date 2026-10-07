@@ -1,0 +1,21 @@
+format_version: "13"
+
+project_type: android
+
+workflows:
+  primary:
+    description: Build Woulwe Grok Android debug APK
+    steps:
+      - git-clone@8: {}
+      - script@1:
+          title: Build debug APK
+          inputs:
+            - content: |-
+                set -e
+                cd android
+                java -version
+                gradle --version
+                gradle clean assembleDebug --no-daemon
+      - deploy-to-bitrise-io@2:
+          inputs:
+            - deploy_path: android/app/build/outputs/apk/debug/app-debug.apk
