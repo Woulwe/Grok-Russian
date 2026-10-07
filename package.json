@@ -1,0 +1,27 @@
+{
+  "name": "woulwe-grok-russian",
+  "version": "1.2.5-rus.1",
+  "description": "Woulwe Grok Desktop based on AnRkey/Grok-Desktop",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "npx --yes electron-builder@latest --win --x64",
+    "build-portable": "npx --yes electron-builder@latest --win portable",
+    "build-linux": "npx --yes electron-builder@latest --linux"
+  },
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {"electron-tabs": "^1.0.4"},
+  "devDependencies": {"electron": "^39.1.2"},
+  "overrides": {"form-data": "4.0.4", "tmp": "latest"},
+  "build": {
+    "appId": "com.woulwe.grok.russian",
+    "productName": "Woulwe Grok",
+    "directories": {"output": "build"},
+    "win": {"target": ["nsis", "portable"], "forceCodeSigning": false},
+    "nsis": {"oneClick": false, "allowToChangeInstallationDirectory": true, "createDesktopShortcut": true, "createStartMenuShortcut": true, "shortcutName": "Woulwe Grok"},
+    "portable": {"artifactName": "Woulwe-Grok-Portable-v${version}.exe"},
+    "compression": "maximum",
+    "asar": true
+  }
+}
