@@ -446,6 +446,20 @@ function createWindow() {
 // Create window when Electron has finished initialization
 app.whenReady().then(() => {
   checkWmctrlAvailability();
+
+  // Apply the optional test-only HTML5 geolocation override to every Grok webview.
+  // This does not alter IP/network/account/licensing information.
+  if (TEST_GEO_ENABLED) {
+    app.on('web-contents-created', (_event, contents) => {
+      applyTestGeolocation(contents);
+      contents.on('did-finish-load', () => applyTestGeolocation(contents));
+      contents.on('did-attach-webview', (_event, webviewContents) => {
+        applyTestGeolocation(webviewContents);
+        webviewContents.on('did-finish-load', () => applyTestGeolocation(webviewContents));
+      });
+    });
+  }
+
   createWindow();
 
   app.on('activate', () => {
