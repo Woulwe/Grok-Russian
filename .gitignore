@@ -1,0 +1,96 @@
+# Node
+node_modules/
+
+# Logs
+logs/
+*.log
+*.log.*
+lerna-debug.log*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Runtime data
+pids/
+*.pid
+*.pid.lock
+*.seed
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Build output
+build/
+dist/
+out/
+release/
+*.asar
+
+# Electron / electron-builder
+.electron-gyp/
+.electron/
+.cache/
+builder-effective-config.yaml
+electron-builder.yml
+
+# Environment files
+.env
+.env.*
+*.local
+
+# OS
+.DS_Store
+Thumbs.db
+$RECYCLE.BIN/
+
+# Editors/IDE
+.vscode/
+.vscode-test/
+.idea/
+*.iml
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*.swo
+
+# Temp
+.tmp/
+.temp/
+tmp/
+temp/
+*.tmp
+*.temp
+
+# npm cache
+.npm/
+
+# Keep lockfiles tracked (do not ignore package-lock.json)
+
+# Task list
+<<<<<<< HEAD
+task-list.md
+=======
+tasklist.md
+>>>>>>> development
+
+# Security reports
+security_reports/
+
+<<<<<<< HEAD
+# Task lists
+tasklist.md
+
+=======
+# Regression test checklist
+REGRESSION_TEST_CHECKLIST.md
+
+# release notes for github
+release.md
+
+# copyparty
+copyparty_1.19.22.exe
+>>>>>>> development
